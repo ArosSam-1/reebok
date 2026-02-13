@@ -21418,6 +21418,22 @@ fbq('track', 'PageView');
   
 <script src="https://converse.microcast.ai/embed/fabb1614-0b97-4243-ae6e-8f8905210585.js" defer></script> 
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  let all = document.querySelectorAll('*');
+  all.forEach(el => {
+    if (getComputedStyle(el).pointerEvents === "none") {
+      el.style.outline = "2px solid red";
+    }
+    const z = getComputedStyle(el).zIndex;
+    if (z && z !== "auto" && parseInt(z) > 0) {
+      el.style.outline = "1px solid lime";
+    }
+  });
+});
+</script>
+
+
 </body>
   
   <!-- hide local sale -->
@@ -21432,6 +21448,7 @@ fbq('track', 'PageView');
 
 
 </html>
+
 
 
 
